@@ -1,18 +1,82 @@
-# Obsidian Sample Plugin
+# Obsidian Sync Plugin
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+This project is a custom plugin for syncing data in [Obsidian](https://obsidian.md), built with TypeScript and bundled using `esbuild`.
 
-This project uses TypeScript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
+## Features
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open Sample Modal" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
+- Syncs data between Obsidian and external sources.
+- Provides Git integration for version control.
+- Customizable settings for user preferences.
 
-## First time developing plugins?
+## Requirements
+
+- **Node.js**: v16 or higher
+- **npm**: v7 or higher
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/obsidian-sync.git
+   cd obsidian-sync
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Build the project:
+
+   ```bash
+   npm run build
+   ```
+
+## Development
+
+### Commands
+
+- **TypeScript Check**: Run TypeScript without emitting files:
+
+  ```bash
+  npm run type-check
+  ```
+
+- **Build**: Bundle the project using `esbuild`:
+
+  ```bash
+  npm run build
+  ```
+
+- **Run in Production**:
+
+  ```bash
+  tsc -noEmit -skipLibCheck && node esbuild.config.mjs production
+  ```
+
+### File Structure
+
+- `src/`: Contains the TypeScript source code.
+- `dist/`: Contains the bundled output.
+- `esbuild.config.mjs`: Configuration for `esbuild`.
+
+## Troubleshooting
+
+### Common Errors
+
+- **`Could not resolve "node:events"`**: Ensure `platform: 'node'` is set in `esbuild.config.mjs`.
+
+- **TypeScript Errors**: Run `npm run type-check` to identify and fix issues.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 Quick starting guide for new plugin devs:
 
@@ -56,7 +120,8 @@ Quick starting guide for new plugin devs:
 - Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
 
 ## Improve code quality with eslint (optional)
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
+
+- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code.
 - To use eslint with this project, make sure to install eslint from terminal:
   - `npm install -g eslint`
 - To use eslint to analyze this project use this command:
@@ -73,7 +138,7 @@ The simple way is to set the `fundingUrl` field to your link in your `manifest.j
 
 ```json
 {
-    "fundingUrl": "https://buymeacoffee.com"
+  "fundingUrl": "https://buymeacoffee.com"
 }
 ```
 
@@ -81,11 +146,11 @@ If you have multiple URLs, you can also do:
 
 ```json
 {
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
+  "fundingUrl": {
+    "Buy Me a Coffee": "https://buymeacoffee.com",
+    "GitHub Sponsor": "https://github.com/sponsors",
+    "Patreon": "https://www.patreon.com/"
+  }
 }
 ```
 
