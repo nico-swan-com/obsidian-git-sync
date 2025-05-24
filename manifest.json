@@ -1,0 +1,11 @@
+{
+  "id": "obsidian-git-sync",
+  "name": "Git Sync",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Automates Git-based synchronization for your Obsidian vaults.",
+  "author": "Nico Swan",
+  "authorUrl": "https://www.nicoswan.com",
+  "fundingUrl": "https://buymeacoffee.com/nicoswan",
+  "isDesktopOnly": false
+}

@@ -1,0 +1,8 @@
+{
+  "commitInterval": 15,
+  "repoUrl": "git@gitlab.com:cygnus-labs/documentation/nicoswan.git",
+  "authMethod": "ssh",
+  "autoSync": true,
+  "lastSync": "Never",
+  "commitMessage": "Vault auto-sync: {{date}}"
+}
